@@ -11,7 +11,7 @@ public class CustomerController {
     private Scanner sc = new Scanner(System.in);
 
     public void run() {
-        int option;
+        int option ;
         do{
             System.out.println("\n---- Customer ----");
             System.out.println("1. Add Customer");
