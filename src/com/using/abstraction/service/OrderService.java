@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-public class OrderService {
+public class OrderService implements OrderNumberService {
 
     OrderRepository orderRepository = new OrderRepository();
     HashMap<Integer,Order> orders = new HashMap<>();
@@ -45,12 +45,22 @@ public class OrderService {
         }
         return order;
     }
-      public void displayOrder(){
+
+    @Override
+    public void createOrderNo() {
+
+    }
+
+    public void displayOrder(){
         try {
-            Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
-            for (Map.Entry<Integer, Order> customerEntry : entrySet) {
-                System.out.println("Customer Info: " + orders);
-            }
+//            Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
+//            for (Map.Entry<Integer, Order> customerEntry : entrySet) {
+//                System.out.println("Customer Info: " + orders);
+//            }
+
+            //java 8 features forEach loop..
+            orders.forEach((Id,orders) -> System.out.println("orderId " + Id + " = order info " + orders));
+
         }catch (Exception e){
             System.out.println("Invalid input type correct data");
         }

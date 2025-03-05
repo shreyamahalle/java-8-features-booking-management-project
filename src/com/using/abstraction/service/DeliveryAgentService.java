@@ -3,15 +3,16 @@ import com.using.abstraction.model.DeliveryAgent;
 import com.using.abstraction.repository.DeliveryAgentRepository;
 import java.util.*;
 
-public class DeliveryAgentService {
+public class DeliveryAgentService implements DeliveryAgentServiceInterface  {
     private DeliveryAgentRepository deliveryAgentRepository = new DeliveryAgentRepository();
-    private static Map<Integer , DeliveryAgent> deliveryAgents = new HashMap<>();
+    public static Map<Integer, DeliveryAgent> deliveryAgents = new HashMap<>();
     private Scanner sc = new Scanner(System.in);
 
     void printCustomer(DeliveryAgent deliveryAgent){
 
         System.out.println(deliveryAgent);
     }
+
     public DeliveryAgent createDeliveryAgent(){
 
         DeliveryAgent deliveryAgent = new DeliveryAgent();
@@ -47,18 +48,17 @@ public class DeliveryAgentService {
 
         try {
 
-        Set<Map.Entry<Integer,DeliveryAgent>> entrySet = deliveryAgents.entrySet();
-        for(Map.Entry<Integer,DeliveryAgent>customerEntry : entrySet){
-            System.out.println("Customer Info: " + deliveryAgents );
-          }
+//         Set<Map.Entry<Integer,DeliveryAgent>> entrySet = deliveryAgents.entrySet();
+//         for(Map.Entry<Integer,DeliveryAgent>customerEntry : entrySet){
+//            System.out.println("Customer Info: " + deliveryAgents );
+//          }
 
-        }catch (Exception e){
+            //java 8 features forEach loop..
+            deliveryAgents.forEach((id, deliveryAgents)-> System.out.println("deliveryAgents Id " + id + " = deliveryAgents info " + deliveryAgents));
+
+            }catch (Exception e){
             System.out.println("Invalid input type correct data");
         }
-//        for(DeliveryAgent deliveryAgent : deliveryAgents){
-//            System.out.println("Customer Info: " + deliveryAgent);
-//        }
     }
 }
-
 

@@ -3,7 +3,7 @@ import com.using.abstraction.model.Customer;
 import com.using.abstraction.repository.CustomerRepository;
 import java.util.*;
 
-public class CustomerService {
+public class CustomerService implements CustomerServiceIInterface {
     private CustomerRepository customerRepository = new CustomerRepository();
     private static Map<Integer ,Customer> customers = new HashMap<>();
     private Scanner sc = new Scanner(System.in);
@@ -47,11 +47,13 @@ public class CustomerService {
     }
     public void displayCustomers(){
        try {
-            Set<Map.Entry<Integer, Customer>> entrySet = customers.entrySet();
+            //Set<Map.Entry<Integer, Customer>> entrySet = customers.entrySet();
 
-            for (Map.Entry<Integer, Customer> customerEntry : entrySet) {
-                System.out.println("Customer Info: " + customers);
-            }
+//            for (Map.Entry<Integer, Customer> customerEntry : entrySet) {
+//                System.out.println("Customer Info: " + customers);
+//            }
+           //java 8 features forEach loop ...
+           customers.forEach((customerId, customers) -> System.out.println("Customer Id " + customerId + " = Customer Info " + customers));
 
            } catch (Exception e) {
            System.out.println("Error occurred");
