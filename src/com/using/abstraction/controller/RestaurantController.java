@@ -15,7 +15,7 @@ public class RestaurantController {
     Restaurant restaurant = new Restaurant();
     private Scanner sc = new Scanner(System.in);
 
-    public void restaurantInfo() {
+    public void run() {
         int option;
         do{
             System.out.println("\n---- Order ----");

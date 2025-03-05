@@ -10,7 +10,7 @@ public class CustomerController {
     Customer customer = new Customer();
     private Scanner sc = new Scanner(System.in);
 
-    public void data() {
+    public void run() {
         int option;
         do{
             System.out.println("\n---- Customer ----");

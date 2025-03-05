@@ -11,7 +11,7 @@ public class DeliveryAgentController {
     private Customer C = new Customer();
     private Scanner sc = new Scanner(System.in);
 
-    public void deliveryInfo() {
+    public void run() {
         int option;
         do{
             System.out.println("\n---- DeliveryAgent ----");

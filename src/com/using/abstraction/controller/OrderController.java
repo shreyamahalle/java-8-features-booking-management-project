@@ -16,7 +16,7 @@ public class OrderController {
     Order order = new Order();
     private Scanner sc = new Scanner(System.in);
 
-    public void orderInfo() {
+    public void run() {
         int option;
         do{
             System.out.println("\n---- Order ----");

@@ -32,7 +32,7 @@ public class BookingOrderManagement {
             switch (option) {
                 case 1:
                       CustomerController customerController = new CustomerController();
-                      customerController.data();
+                      customerController.run();
                       Customer customer = new Customer();
                       //System.out.println("Customer created : " + customer);
                       break;
@@ -42,7 +42,7 @@ public class BookingOrderManagement {
                     DeliveryAgentController deliveryAgentController = new DeliveryAgentController();
                     DeliveryAgentService deliveryAgentService = new DeliveryAgentService();
                     deliveryAgentService.createDeliveryAgent();
-                    deliveryAgentController.deliveryInfo();
+                    deliveryAgentController.run();
                     DeliveryAgent deliveryAgent = new DeliveryAgent();
                     System.out.println("DeliveryAgent created : " + deliveryAgent);
                     break;
@@ -52,7 +52,7 @@ public class BookingOrderManagement {
                     OrderController orderController = new OrderController();
                     OrderService orderService = new OrderService();
                     OrderNumberService orderNumberService = new OrderNumberImpl();
-                    orderController.orderInfo();
+                    orderController.run();
                     orderService.createOrder();
                     Order order = new Order();
                     orderNumberService.createOrderNo();
@@ -62,7 +62,7 @@ public class BookingOrderManagement {
             switch (option) {
                 case 4:
                     RestaurantController restaurantController = new RestaurantController();
-                    restaurantController.restaurantInfo();
+                    restaurantController.run();
                     Restaurant restaurant = new Restaurant();
                     System.out.println("Restaurant created : " + restaurant);
                     break;
@@ -72,7 +72,7 @@ public class BookingOrderManagement {
                     OrderNumberService orderNumberService = new OrderNumberImpl();
                     CustomerImpl customerImpl = new CustomerImpl();
                     OrderNumberController orderNumberController = new OrderNumberController();
-                    orderNumberController.orderInfo();
+                    orderNumberController.run();
                     orderNumberService.createOrderNo();
                     customerImpl.printCustomer();
                     customerImpl.createOrder();
