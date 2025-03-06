@@ -31,6 +31,8 @@ public class OrderController {
                     case 1:
                         orderService.createOrder();
                         orderService.displayOrder();
+                        orderService.deleteOrder(1);
+                        orderService.displayOrder();
                         System.out.print("Order " + order);
                         break;
                     case 2:

@@ -54,7 +54,6 @@ public class BookingOrderManagement {
                     OrderNumberService orderNumberService = new OrderNumberImpl();
                     orderController.run();
                     orderService.createOrder();
-                    orderService.deleteOrder(1);
                     Order order = new Order();
                     orderNumberService.createOrderNo();
                     System.out.println("Order created : " + order);
