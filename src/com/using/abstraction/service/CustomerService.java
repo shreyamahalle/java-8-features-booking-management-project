@@ -45,6 +45,7 @@ public class CustomerService  implements CustomerServiceIInterface {
             System.out.println("Invalid input type correct data");
         }
     }
+
     public void displayCustomers(){
        try {
             //Set<Map.Entry<Integer, Customer>> entrySet = customers.entrySet();
@@ -58,5 +59,6 @@ public class CustomerService  implements CustomerServiceIInterface {
            } catch (Exception e) {
            System.out.println("Error occurred");
            }
+
         }
     }

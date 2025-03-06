@@ -1,10 +1,10 @@
 package com.using.abstraction.service;
 import com.using.abstraction.model.Order;
 import com.using.abstraction.repository.OrderRepository;
+
+import java.sql.SQLOutput;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 
 public class OrderService implements OrderNumberService {
 
@@ -13,7 +13,6 @@ public class OrderService implements OrderNumberService {
     Scanner sc = new Scanner(System.in);
 
     void printCustomer(Order order){
-
         System.out.println(order);
     }
     public Order createOrder(){
@@ -45,12 +44,14 @@ public class OrderService implements OrderNumberService {
         }
         return order;
     }
-
     @Override
     public void createOrderNo() {
-
     }
 
+    public void deleteOrder(int orderId){
+        String removeOrder = String.valueOf(orderId);
+        System.out.println("remove order " + removeOrder );
+    }
     public void displayOrder(){
         try {
 //            Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
@@ -64,5 +65,6 @@ public class OrderService implements OrderNumberService {
         }catch (Exception e){
             System.out.println("Invalid input type correct data");
         }
+
     }
 }
