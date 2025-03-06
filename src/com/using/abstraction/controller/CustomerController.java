@@ -25,6 +25,7 @@ public class CustomerController {
                     case 1:
                         customerService.createCustomer();
                         customerService.displayCustomers();
+                        customerService.displayCustomerInfo();
                         System.out.println("Customer created : " + customer);
                         break;
                     case 2:

@@ -9,8 +9,14 @@ public class CustomerService  implements CustomerServiceIInterface {
     private Scanner sc = new Scanner(System.in);
 
     void printCustomer(Customer customer){
-
         System.out.println(customer);
+    }
+
+    // using stream api
+    public void displayCustomerInfo() {
+        customers.entrySet().stream().parallel()
+                .filter(entry -> entry.getValue().getId()>101)
+                .forEach(entry -> System.out.println("Customer ID: " + entry.getKey() + " = Customer Info: " + entry.getValue()));
     }
 
     public void createCustomer () {
@@ -41,11 +47,11 @@ public class CustomerService  implements CustomerServiceIInterface {
             customer.setMobileNo(mobileNo);
             customers.put(1, customer);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input type correct data");
         }
-    }
 
+    }
     public void displayCustomers(){
        try {
             //Set<Map.Entry<Integer, Customer>> entrySet = customers.entrySet();
